@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Productivity Tracker - Dashboard</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <h1>🚀 Productivity Tracker</h1>
+      <p>Chrome Extension for Time Tracking & Analytics</p>
+    </div>
+
+    <div class="dashboard">
+      <div class="extension-info">
+        <h3>📊 Real-time Productivity Analytics</h3>
+        <p>This Chrome extension tracks your browsing time across different websites and categorizes them as productive or unproductive. Get insights into your daily habits and improve your productivity with detailed analytics and weekly reports.</p>
+      </div>
+
+      <div class="controls">
+        <button class="btn btn-primary" onclick="startTracking()">▶️ Start Tracking</button>
+        <button class="btn btn-secondary" onclick="pauseTracking()">⏸️ Pause Tracking</button>
+        <button class="btn btn-secondary" onclick="generateReport()">📈 Generate Report</button>
+        <button class="btn btn-secondary" onclick="exportData()">💾 Export Data</button>
+      </div>
+
+      <div class="stats-grid">
+        <div class="stat-card">
+          <h3>Today's Total Time</h3>
+          <div class="stat-value" id="totalTime">5h 23m</div>
+          <div class="stat-label">Active browsing time</div>
+        </div>
+        <div class="stat-card">
+          <h3>Productive Time</h3>
+          <div class="stat-value productive" id="productiveTime">3h 45m</div>
+          <div class="stat-label">70% of total time</div>
+        </div>
+        <div class="stat-card">
+          <h3>Unproductive Time</h3>
+          <div class="stat-value unproductive" id="unproductiveTime">1h 38m</div>
+          <div class="stat-label">30% of total time</div>
+        </div>
+        <div class="stat-card">
+          <h3>Productivity Score</h3>
+          <div class="stat-value productive" id="productivityScore">85/100</div>
+          <div class="stat-label">Above average</div>
+        </div>
+      </div>
+
+      <div class="charts-section">
+        <div class="chart-card">
+          <h3>📈 Time Distribution</h3>
+          <div class="chart-container">
+            <canvas id="timeChart" width="300" height="200"></canvas>
+          </div>
+        </div>
+        <div class="chart-card">
+          <h3>📊 Weekly Trend</h3>
+          <div class="chart-container">
+            <canvas id="weeklyChart" width="300" height="200"></canvas>
+          </div>
+        </div>
+      </div>
+
+      <div class="website-list">
+        <h3>🌐 Top Websites Today</h3>
+        <div class="website-item">
+          <div>
+            <span class="website-name">github.com</span>
+            <span class="website-category category-productive">Productive</span>
+          </div>
+          <span class="website-time">1h 45m</span>
+        </div>
+        <div class="website-item">
+          <div>
+            <span class="website-name">stackoverflow.com</span>
+            <span class="website-category category-productive">Productive</span>
+          </div>
+          <span class="website-time">1h 20m</span>
+        </div>
+        <div class="website-item">
+          <div>
+            <span class="website-name">youtube.com</span>
+            <span class="website-category category-unproductive">Unproductive</span>
+          </div>
+          <span class="website-time">58m</span>
+        </div>
+        <div class="website-item">
+          <div>
+            <span class="website-name">docs.google.com</span>
+            <span class="website-category category-productive">Productive</span>
+          </div>
+          <span class="website-time">40m</span>
+        </div>
+        <div class="website-item">
+          <div>
+            <span class="website-name">twitter.com</span>
+            <span class="website-category category-unproductive">Unproductive</span>
+          </div>
+          <span class="website-time">32m</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
